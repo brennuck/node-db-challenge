@@ -1,7 +1,12 @@
-const server = require("./api/server.js");
+require('dotenv').config()
+//dotenv must be at the top level
+//Create a
+const express = require('express');
+const app = require('./server.js');
 
-const PORT = process.env.PORT || 1234;
 
-server.listen(PORT, () => {
-  console.log(`\n Server running on \n ${PORT} \n`);
-});
+const port = process.env.PORT || 1234;
+
+app.listen(port, () => {
+    console.log(`\n* Server Running on http://localhost:${port} *\n`);
+}); 
