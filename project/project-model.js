@@ -16,10 +16,12 @@ function getProjects() {
 }
 
 function getTasks(id) {
+    // return db('projects')
+    //     .join('tasks', 'projects.tasks_id', 'tasks.id')
+    //     .where('projects.id', '=', id)
+    //     .select('projects.projects_name', 'tasks.tasks_desc')
     return db('projects')
-        .join('tasks', 'projects.tasks_id', 'tasks.id')
-        .where('projects.id', '=', id)
-        .select('projects.projects_name', 'tasks.tasks_desc')
+        .join()
 }
 
 function getResources(id) {

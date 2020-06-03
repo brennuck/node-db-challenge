@@ -6,8 +6,8 @@ exports.up = function(knex) {
         tbl.text('projects_name', 256)
             .unique()
             .notNullable();
-        tbl.string('projects_desc', 256)
-        tbl.boolean('projects_completed').defaultTo(false)
+        tbl.text('projects_description', 256);
+        tbl.boolean('projects_completed').defaultTo(false);
         tbl.integer('tasks_id')
             .references('id')
             .inTable('tasks')
